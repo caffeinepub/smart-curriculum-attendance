@@ -1,0 +1,86 @@
+@font-face {
+  font-family: 'Bricolage Grotesque';
+  src: url('/assets/fonts/BricolageGrotesque.woff2') format('woff2');
+  font-weight: 200 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Plus Jakarta Sans';
+  src: url('/assets/fonts/PlusJakartaSans.woff2') format('woff2');
+  font-weight: 300 700;
+  font-display: swap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@300..700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0.97 0.006 85;
+    --foreground: 0.18 0.02 240;
+    --card: 1 0 0;
+    --card-foreground: 0.18 0.02 240;
+    --popover: 1 0 0;
+    --popover-foreground: 0.18 0.02 240;
+    --primary: 0.38 0.11 185;
+    --primary-foreground: 0.98 0.005 200;
+    --secondary: 0.93 0.02 185;
+    --secondary-foreground: 0.35 0.09 185;
+    --muted: 0.94 0.01 200;
+    --muted-foreground: 0.52 0.04 220;
+    --accent: 0.72 0.16 72;
+    --accent-foreground: 0.18 0.04 60;
+    --destructive: 0.58 0.22 27;
+    --destructive-foreground: 0.98 0.01 0;
+    --border: 0.89 0.02 200;
+    --input: 0.89 0.02 200;
+    --ring: 0.38 0.11 185;
+    --radius: 0.75rem;
+    --chart-1: 0.38 0.11 185;
+    --chart-2: 0.72 0.16 72;
+    --chart-3: 0.55 0.18 300;
+    --chart-4: 0.65 0.19 145;
+    --chart-5: 0.62 0.21 15;
+    --sidebar: 0.24 0.06 200;
+    --sidebar-foreground: 0.92 0.02 200;
+    --sidebar-primary: 0.72 0.16 72;
+    --sidebar-primary-foreground: 0.18 0.04 60;
+    --sidebar-accent: 0.32 0.07 200;
+    --sidebar-accent-foreground: 0.92 0.02 200;
+    --sidebar-border: 0.30 0.06 200;
+    --sidebar-ring: 0.72 0.16 72;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+    font-feature-settings: 'kern' 1, 'liga' 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer utilities {
+  .gradient-teal {
+    background: linear-gradient(135deg, oklch(0.38 0.11 185) 0%, oklch(0.30 0.09 200) 100%);
+  }
+
+  .gradient-amber {
+    background: linear-gradient(135deg, oklch(0.75 0.18 72) 0%, oklch(0.65 0.20 58) 100%);
+  }
+
+  .glass {
+    background: oklch(1 0 0 / 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+  }
+}
